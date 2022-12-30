@@ -1,5 +1,10 @@
 <?php 
     include("/BITM/wamp/www/News-Site/config.php");
+
+    session_start();
+    if(!isset($_SESSION['user'])){
+        header("location: http://localhost/News-Site/admin/");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
