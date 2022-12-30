@@ -1,6 +1,6 @@
 <?php include "header.php"; 
 if(isset($_POST['submit'])){
-    include("/BITM/wamp/www/CMSBlog/config.php");
+    include("/BITM/wamp/www/News-Site/config.php");
     $id = mysqli_real_escape_string($con,$_POST['user_id']);
     $fname = mysqli_real_escape_string($con, $_POST['f_name']);
     $lname = mysqli_real_escape_string($con, $_POST['l_name']);
@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
     $sql1= "update user set first_name = '{$fname}',last_name = '{$lname}',username = '{$user}',role = '{$role}' where user_id = {$id}";
     $result1 = mysqli_query($con,$sql1) or die("Unsuccessful Query1");
 
-    header("location: http://localhost/CMSBlog/admin/users.php");
+    header("location: http://localhost/News-Site/admin/users.php");
 }
 
 ?>
@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
               <div class="col-md-offset-4 col-md-4">
                   <!-- Form Start -->
                   <?php
-                    include("/BITM/wamp/www/CMSBlog/config.php");
+                    include("/BITM/wamp/www/News-Site/config.php");
                     $edit_id = $_GET['edit_id'];
                     $sql     = "select * from user where user_id = {$edit_id}";
                     $result  = mysqli_query($con,$sql) or die("Unsuccessful Query");
