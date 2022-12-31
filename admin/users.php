@@ -34,6 +34,7 @@
                       <thead>
                           <th>S.No.</th>
                           <th>Full Name</th>
+                          <th>Email</th>
                           <th>User Name</th>
                           <th>Role</th>
                           <th>Edit</th>
@@ -46,6 +47,7 @@
                           <tr>
                               <td class='id'><?php echo $row['user_id'] ?></td>
                               <td><?php echo $row['first_name'].' '.$row['last_name'] ?></td>
+                              <td><?php echo $row['email'] ?></td>
                               <td><?php echo $row['username'] ?></td>
                               <td><?php 
                                 if($row['role'] == 1) {

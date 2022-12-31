@@ -1,26 +1,27 @@
 <?php include "header.php"; 
     if(isset($_POST['save'])){
       include("/BITM/wamp/www/News-Site/config.php");
-      $fname = mysqli_real_escape_string($con,$_POST['fname']);
-      $lname = mysqli_real_escape_string($con,$_POST['lname']);
-      $user  = mysqli_real_escape_string($con,$_POST['user']);
-      $pass  = mysqli_real_escape_string($con,md5($_POST['password']));
-      $role  = mysqli_real_escape_string($con,$_POST['role']);
+      $fname = mysqli_real_escape_string($con, $_POST['fname']);
+      $lname = mysqli_real_escape_string($con, $_POST['lname']);
+      $user  = mysqli_real_escape_string($con, $_POST['user']);
+      $email = mysqli_real_escape_string($con, $_POST['email']);
+      $pass  = mysqli_real_escape_string($con, md5($_POST['password']));
+      $role  = mysqli_real_escape_string($con, $_POST['role']);
       $sql = "select username from user where username = '{$user}'";
       $result = mysqli_query($con,$sql) or die("Unsuccessful Query");
       
       if(mysqli_num_rows($result) > 0){
         echo "UserName Already Exist";
       }else {
-        $sql1 = "insert into user(first_name,last_name,username,password,role)
-        values('{$fname}','{$lname}','{$user}','{$pass}','{$role}')";
+        $sql1 = "insert into user(first_name,last_name,username,email,password,role)
+        values('{$fname}','{$lname}','{$user}','{$email}','{$pass}','{$role}')";
         
         if(mysqli_query($con,$sql1)){
             header("location: http://localhost/News-Site/admin/users.php");
         }
       }
+      $validEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
     }
-
 
 ?>
   <div id="admin-content">
@@ -44,7 +45,20 @@
                           <label>User Name</label>
                           <input type="text" name="user" class="form-control" placeholder="Username" required>
                       </div>
-
+                      
+                      <div class="form-group">
+                          <label>Email</label>
+                          <input type="email" name="email" class="form-control" placeholder="Email" required>
+                      </div>
+                        <?php 
+                            if (isset($_POST['save'])) {
+                                if ($validEmail) {
+                                
+                                } else {
+                                    echo "<span style='color:red'> Email Not Valid </span>";
+                                }
+                            }
+                        ?>
                       <div class="form-group">
                           <label>Password</label>
                           <input type="password" name="password" class="form-control" placeholder="Password" required>
