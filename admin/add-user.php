@@ -1,4 +1,5 @@
 <?php include "header.php"; 
+    error_reporting(0);
     if(isset($_POST['save'])){
       include("/BITM/wamp/www/News-Site/config.php");
       $fname = mysqli_real_escape_string($con, $_POST['fname']);
@@ -10,9 +11,16 @@
       $sql = "select username from user where username = '{$user}'";
       $result = mysqli_query($con,$sql) or die("Unsuccessful Query");
       
+      $validEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
+
       if(mysqli_num_rows($result) > 0){
         echo "UserName Already Exist";
-      }else {
+      } elseif (empty($email)) {
+        $emt = "Please Enter Your Email";
+    } elseif (!$validEmail) {
+        $valid = "Please Enter Valid Email";
+    }
+      else {
         $sql1 = "insert into user(first_name,last_name,username,email,password,role)
         values('{$fname}','{$lname}','{$user}','{$email}','{$pass}','{$role}')";
         
@@ -20,7 +28,7 @@
             header("location: http://localhost/News-Site/admin/users.php");
         }
       }
-      $validEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
+      
     }
 
 ?>
@@ -47,18 +55,10 @@
                       </div>
                       
                       <div class="form-group">
-                          <label>Email</label>
+                          <label>Email</label> <span style="color: red;"> <?php echo ":". $emt; ?></span>
                           <input type="email" name="email" class="form-control" placeholder="Email" required>
                       </div>
-                        <?php 
-                            if (isset($_POST['save'])) {
-                                if ($validEmail) {
-                                
-                                } else {
-                                    echo "<span style='color:red'> Email Not Valid </span>";
-                                }
-                            }
-                        ?>
+                        <span style="color: red;"> <?php echo $valid; ?></span>
                       <div class="form-group">
                           <label>Password</label>
                           <input type="password" name="password" class="form-control" placeholder="Password" required>
@@ -70,7 +70,7 @@
                               <option value="1">Admin</option>
                           </select>
                       </div>
-                      <input type="submit"  name="save" class="btn btn-primary" value="Save" required />
+                      <input type="submit"  name="save" class="btn btn-primary" value="Save" />
                   </form>
                    <!-- Form End-->
                </div>
