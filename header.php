@@ -1,5 +1,6 @@
 <?php 
 include("/BITM/wamp/www/News-Site/config.php");
+
 $page = basename($_SERVER['SCRIPT_NAME']);
 switch($page){
     case "single.php":
@@ -95,7 +96,7 @@ switch($page){
 <!-- /HEADER -->
 <!-- Menu Bar -->
 <?php 
-    include("/BITM/wamp/www/News-Site/config.php");
+    // include("/BITM/wamp/www/News-Site/config.php");
     if(isset($_GET['cid'])){
         $cid = $_GET['cid'];
     }

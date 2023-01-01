@@ -5,7 +5,7 @@
                 <div class="col-md-8">
                   <!-- post-container -->
                   <?php 
-                    include("/BITM/wamp/www/News-Site/config.php");
+                    // include("/BITM/wamp/www/News-Site/config.php");
                     $id = $_GET['id'];
                     $sql = "select * from post left join category on post.category = category.category_id
                             left join user on post.author = user.user_id where post.post_id = {$id}";

@@ -16,7 +16,7 @@
     <div class="recent-post-container">
         <h4>Recent Posts</h4>
         <?php 
-            include("/BITM/wamp/www/News-Site/config.php");
+            // include("/BITM/wamp/www/News-Site/config.php");
             $sql = "select * from post left join category on post.category = category.category_id order by post_id desc limit 4";
             $result = mysqli_query($con, $sql) or die("Unsuccessful SQL");
             if(mysqli_num_rows($result) > 0 ){

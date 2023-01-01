@@ -57,6 +57,9 @@
                             <li>
                                 <a href="users.php">Users</a>
                             </li>
+                            <li>
+                                <a href="setting.php">Setting</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
