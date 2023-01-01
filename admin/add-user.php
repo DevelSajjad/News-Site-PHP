@@ -1,7 +1,6 @@
 <?php include "header.php"; 
     error_reporting(0);
     if(isset($_POST['save'])){
-      include("/BITM/wamp/www/News-Site/config.php");
       $fname = mysqli_real_escape_string($con, $_POST['fname']);
       $lname = mysqli_real_escape_string($con, $_POST['lname']);
       $user  = mysqli_real_escape_string($con, $_POST['user']);

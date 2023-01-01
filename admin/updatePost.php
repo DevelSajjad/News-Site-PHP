@@ -1,34 +1,7 @@
 <?php
-// include("/BITM/wamp/www/CMSBlog/config.php");
-// if(empty($_FILES['new-image']['name'])){
-//     $image = $_POST['old-image'];
-// }else{
-//     $error = array();
-//     $image = $_FILES['new-image']['name'];
-//     $tmpName = $_FILES['new-image']['tmp_name'];
-//     $size = $_FILES['new-image']['size'];
-//     $type = $_FILES['new-image']['type'];
-//     $fileExt = end(explode('.',$image));
-//     $ext = ['JPG','jpg','png'];
-//     if(in_array($fileExt,$ext) === false){
-//         $error[] = "Upload Only JPG or PNG File";
-//     }
-//     if($size > 2097152){
-//         $error[] ="Image file under 2mb"; 
-//     }
-//     if(empty($error) == true){
-//         move_uploaded_file($tmpName,"upload/".$image);
-//     }
-// }
-    
-//     echo $sql = "update post set title = '{$_POST["post_title"]}',description = '{$_POST["postdesc"]}', category = {$_POST["category"]}, post_img = '{$image}'
-//         where post_id = {$_POST["post_id"]}";
-
-//     $result = mysqli_query($con, $sql) or die("Unsuccessful Query");
-//     header("location: http://localhost/CMSBlog/admin/post.php");
-//     mysqli_close($con);
 
 include("/BITM/wamp/www/News-Site/config.php");
+
 if(empty($_FILES['new-image']['name'])){
     $nametime = $_POST['old-image'];
 }else{

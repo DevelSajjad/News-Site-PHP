@@ -18,7 +18,6 @@
                       </div>
                       <div class="form-group">
                         <?php 
-                            include("/BITM/wamp/www/News-Site/config.php");
                             $sql = "select * from category";
                             $result = mysqli_query($con, $sql) or die("Unsuccessfull Query ");
                             if(mysqli_num_rows($result)> 0 ){

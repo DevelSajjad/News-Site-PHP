@@ -1,9 +1,9 @@
 <?php include "header.php"; 
-    include("/BITM/wamp/www/News-Site/config.php");
+
     
-    // if($_SESSION['role'] == 0){
-    //     header("location: http://localhost/CMSBlog/admin/post.php");
-    // }
+    if($_SESSION['role'] == 0){
+        header("location: http://localhost/CMSBlog/admin/post.php");
+    }
 
 ?>
   <div id="admin-content">
@@ -17,7 +17,6 @@
               </div>
               <div class="col-md-12">
                 <?php 
-                include("/BITM/wamp/www/News-Site/config.php");
                 if(isset($_GET['page'])){
                     $page = $_GET['page'];
                 }else{

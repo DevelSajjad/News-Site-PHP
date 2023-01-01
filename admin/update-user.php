@@ -1,6 +1,5 @@
 <?php include "header.php"; 
 if(isset($_POST['submit'])){
-    include("/BITM/wamp/www/News-Site/config.php");
     $id = mysqli_real_escape_string($con,$_POST['user_id']);
     $fname = mysqli_real_escape_string($con, $_POST['f_name']);
     $lname = mysqli_real_escape_string($con, $_POST['l_name']);
@@ -22,7 +21,6 @@ if(isset($_POST['submit'])){
               <div class="col-md-offset-4 col-md-4">
                   <!-- Form Start -->
                   <?php
-                    include("/BITM/wamp/www/News-Site/config.php");
                     $edit_id = $_GET['edit_id'];
                     $sql     = "select * from user where user_id = {$edit_id}";
                     $result  = mysqli_query($con,$sql) or die("Unsuccessful Query");

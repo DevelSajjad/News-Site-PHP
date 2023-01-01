@@ -1,5 +1,4 @@
 <?php include("header.php");
-    include("/BITM/wamp/www/News-Site/config.php");
     
     if($_SESSION['role'] == 0){
         header("location: http://localhost/News-Site/admin/post.php");

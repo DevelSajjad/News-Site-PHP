@@ -17,6 +17,7 @@
     // }
 
     include("/BITM/wamp/www/News-Site/config.php");
+    
     $delete = $_GET['delete'];
     $catId = $_GET['catId'];
     $sql1 = "select * from post where post_id = {$delete}";

@@ -13,7 +13,6 @@
 
               <div class="col-md-12">
                 <?php 
-                    include("/BITM/wamp/www/News-Site/config.php");
                     if (isset($_GET['page'])){
                         $page = $_GET['page'];
                     } else {

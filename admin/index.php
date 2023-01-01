@@ -1,5 +1,7 @@
 <?php
+
     include("/BITM/wamp/www/News-Site/config.php");
+
     session_start();
     if(isset($_SESSION['user'])){
         header("location: http://localhost/News-Site/admin/post.php");
@@ -39,7 +41,6 @@
                         <!-- /Form  End -->
                         <?php
                             if(isset($_POST['login'])){
-                                include("/BITM/wamp/www/News-Site/config.php");
                                 $user = mysqli_real_escape_string($con, $_POST['username']);
                                 $password = md5($_POST['password']);
                                 $sql = "select user_id, username, role from user where username = '{$user}' and password = '{$password}'";

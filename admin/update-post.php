@@ -1,5 +1,4 @@
 <?php include "header.php"; 
-include("/BITM/wamp/www/News-Site/config.php");
 
     if($_SESSION['role'] == 0){
         $edit = $_GET['edit'];

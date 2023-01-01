@@ -1,5 +1,5 @@
 <?php include "header.php"; 
-include("/BITM/wamp/www/News-Site/config.php");
+
 if(isset($_POST['save'])){
     // $catName = $_POST['cat'];
 $sql = "insert into category(category_name) values('{$_POST["cat"]}')";

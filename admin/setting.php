@@ -9,7 +9,6 @@
                 
                   <!-- Form -->
                   <?php
-                  include("/BITM/wamp/www/CMSBlog/config.php");
                   $sql = "select * from setting";
                   $result = mysqli_query($con, $sql) or die("unsuccessful Query");
                   if(mysqli_num_rows($result) > 0 ){

@@ -1,5 +1,4 @@
 <?php include "header.php"; 
-        include("/BITM/wamp/www/News-Site/config.php");
         $id = $_GET['edit'];
         // $catName = $_POST[]
         if(isset($_POST['update'])){
