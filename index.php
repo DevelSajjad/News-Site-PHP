@@ -6,7 +6,6 @@
                     <!-- post-container -->
                     <div class="post-container">
                         <?php
-                            // include("/BITM/wamp/www/News-Site/config.php");
                             if(isset($_GET['page'])){
                                 $page = $_GET['page'];
                             }else {

@@ -1,5 +1,5 @@
 <?php
-include("/BITM/wamp/www/News-Site/config.php");
+include("../config.php");
 
 $delete_id = $_GET['delete_id'];
 $sql = "delete from user where user_id = {$delete_id}";

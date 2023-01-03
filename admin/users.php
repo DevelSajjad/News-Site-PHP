@@ -2,7 +2,7 @@
 
     
     if($_SESSION['role'] == 0){
-        header("location: http://localhost/CMSBlog/admin/post.php");
+        header("location: http://localhost/News-Site/admin/post.php");
     }
 
 ?>

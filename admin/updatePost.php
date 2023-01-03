@@ -1,6 +1,6 @@
 <?php
 
-include("/BITM/wamp/www/News-Site/config.php");
+include("../config.php");
 
 if(empty($_FILES['new-image']['name'])){
     $nametime = $_POST['old-image'];

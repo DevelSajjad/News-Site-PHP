@@ -1,5 +1,5 @@
 <?php 
-include("/BITM/wamp/www/News-Site/config.php");
+include("../config.php");
     
 session_start();
 

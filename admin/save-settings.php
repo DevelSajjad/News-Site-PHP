@@ -1,5 +1,5 @@
 <?php 
-include("/BITM/wamp/www/News-Site/config.php");
+include("../config.php");
 
 if(empty($_FILES['logo']['name'])){
     $image = $_POST['old_logo'];

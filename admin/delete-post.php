@@ -16,7 +16,7 @@
     //     mysqli_close($con);
     // }
 
-    include("/BITM/wamp/www/News-Site/config.php");
+    include("../config.php");
     
     $delete = $_GET['delete'];
     $catId = $_GET['catId'];

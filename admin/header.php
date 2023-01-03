@@ -1,5 +1,5 @@
 <?php 
-    include("/BITM/wamp/www/News-Site/config.php");
+    include("../config.php");
 
     session_start();
     if(!isset($_SESSION['user'])){
@@ -51,6 +51,9 @@
                             <li>
                                 <a href="post.php">Post</a>
                             </li>
+                            <?php 
+                                if ($_SESSION['role'] == 1) {
+                            ?>
                             <li>
                                 <a href="category.php">Category</a>
                             </li>
@@ -60,6 +63,7 @@
                             <li>
                                 <a href="setting.php">Setting</a>
                             </li>
+                            <?php }?>
                         </ul>
                     </div>
                 </div>

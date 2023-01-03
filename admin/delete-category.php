@@ -1,6 +1,6 @@
 <?php
 
-    include("/BITM/wamp/www/News-Site/config.php");
+    include("../config.php");
     
     $id = $_GET['delete'];
     $sql = "delete from category where category_id = {$id}";

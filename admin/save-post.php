@@ -1,6 +1,6 @@
 <?php
 
-    include("/BITM/wamp/www/News-Site/config.php");
+    include("../config.php");
 
     if(isset($_FILES['fileToUpload'])){
         $error = array();
